@@ -1,0 +1,202 @@
+@import url(https://fonts.google.com/specimen/Nunito+Sans);
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: hsl(207, 26%, 17%);
+    font-family: 'Nunito', Sans;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 95px;
+    background: hsl(209, 23%, 22%);
+}
+
+p{
+    margin-right: 40px;
+    margin-top: 25px;
+}
+ /*Start style for search and filter  */
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px 98px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+} 
+.search1, .filter{
+    flex-basis: calc(50% - 1rem);
+}
+.search1 input{
+    width: 100;
+    max-width: 400px;
+    padding: 10px;
+    padding-left: 20px;
+    border: none;
+    border-radius: 5px;
+    background: hsl(209, 23%, 22%);
+    color: hsl(0, 0%, 100%);
+}
+.search1 input::placeholder{
+    color: hsl(0, 0%, 98%);
+}
+/* filter */
+.filter{
+    width: 100%;
+    max-width: 250px;
+    border-radius: 5px;
+    position: relative;
+}
+.filter button{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border: none;
+    border-radius: inherit;
+    background: hsl(209, 23%, 22%);
+    color: hsl(0, 0%, 98%);
+}
+
+.filter button::after{
+    font-family: "Material Symbols Outlined";
+    content: "expand_more";
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    line-height: 1;
+    position: absolute;
+    top: 22%;
+    right: 10px;
+    transform: translate(-40%);
+}
+.filter.open button::after{
+    content: "expand_less";
+}
+.filter .options{
+    position: absolute;
+    top: calc(100% + 2px);
+    background: hsl(209, 23%, 22%);
+    width: 100%;
+    border-radius: inherit;
+    overflow: hidden;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.2s;
+}
+.filter.open .options{
+    opacity: 1;
+    transform: scaleY(1);
+}
+.filter .options div{
+    color:hsl(0, 0%, 98%);;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+/* style for Grid */
+.countries{
+    max-width: 1440px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px ;
+}
+.div-country{
+    background: hsl(209, 23%, 22%);
+    border: 1px solid hsl(207, 26%, 17%);
+    width: 300px;
+    margin-top: 38px;
+}
+img{
+    width: 100%;
+    height: 150px;
+}
+h2, h3, h5, p{
+    color: hsl(0, 0%, 100%);
+}
+h3{
+    padding-left: 25px;
+}
+h5{
+    padding-left: 25px;
+    line-height: 3px;
+    font-weight: 300;
+}
+/* style details page */
+.back-btn button{
+    margin: 40px 88px;
+    padding: 10px 100px;
+    /* background: hsl(209, 23%, 22%); */
+    width: 50px;
+    
+}
+
+/* .back-btn button::before{
+    font-family: "Material Symbols Outlined";
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    line-height: 1;
+    position: absolute;
+    top: 22%;
+    right: 10px;
+    transform: translate(-40%);
+} */
+#search_result{
+    display: flex;
+    width: 90%;
+    margin: 40px auto;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.div-col{
+    flex-basis: 30%;
+    
+}
+#flag, .image{
+    height: 400px;
+
+}
+.border-country, button{
+    margin-left: 310px;
+    margin-top: -20px;
+
+}
+
+@media screen and (max-width: 576px){
+    .header{
+        padding: 10px;
+    }
+    h2{
+        font-size: smaller;
+    
+    }
+    p{
+        font-size: smaller;
+        margin-right: 0;
+        margin-top: 10px;
+    }
+    .countries{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 30px;
+    }
+    .search{
+        display: block;
+        margin: 10px;
+    }
+    .search input{
+        width: 300px;
+        margin-top: 20px;
+    }
+    select{
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+
+   
+}
