@@ -6,6 +6,7 @@ body{
     background: hsl(207, 26%, 17%);
     font-family: 'Nunito', Sans;
 }
+/* style for header */
 .header{
     display: flex;
     flex-direction: row;
@@ -22,7 +23,7 @@ p{
 .container{
     width: 100%;
     max-width: 1200px;
-    margin: 40px 98px;
+    margin: 2rem auto 1rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -30,13 +31,19 @@ p{
 .search1, .filter{
     flex-basis: calc(50% - 1rem);
 }
+.search1{
+    /* width: 200px; */
+    margin-left: -120px;
+    background-color: hsl(209, 23%, 22%);
+    border-radius: 5px;
+}
 .search1 input{
     width: 100;
     max-width: 400px;
     padding: 10px;
     padding-left: 20px;
     border: none;
-    border-radius: 5px;
+    cursor: pointer;
     background: hsl(209, 23%, 22%);
     color: hsl(0, 0%, 100%);
 }
@@ -58,6 +65,9 @@ p{
     border-radius: inherit;
     background: hsl(209, 23%, 22%);
     color: hsl(0, 0%, 98%);
+    position: absolute;
+    right: -80px;
+    top: 20px;
 }
 
 .filter button::after{
@@ -86,6 +96,7 @@ p{
     transform: scaleY(0);
     transform-origin: top;
     transition: 0.2s;
+    right: -80px;
 }
 .filter.open .options{
     opacity: 1;
@@ -128,13 +139,15 @@ h5{
 /* style details page */
 .back-btn button{
     margin: 40px 88px;
-    padding: 10px 100px;
-    /* background: hsl(209, 23%, 22%); */
+    padding: 10px 70px;
+    background: hsl(209, 23%, 22%);
     width: 50px;
-    
+}
+#back-button a{
+    color: hsl(0, 0%, 100%);
 }
 
-/* .back-btn button::before{
+.back-btn button::before{
     font-family: "Material Symbols Outlined";
     width: 20px;
     height: 20px;
@@ -144,7 +157,7 @@ h5{
     top: 22%;
     right: 10px;
     transform: translate(-40%);
-} */
+}
 #search_result{
     display: flex;
     width: 90%;
@@ -177,21 +190,55 @@ h5{
     }
     p{
         font-size: smaller;
-        margin-right: 0;
+        margin-right: 7px;
         margin-top: 10px;
     }
     .countries{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         margin: 30px;
+        margin-top: 80px;
     }
-    .search{
+        .container{
         display: block;
-        margin: 10px;
+    
+    }
+    .search1, .filter{
+        /* display: flex; */
+        flex-direction: column;
+    }
+    .search1{
+        margin-left: 20px;
+        width: 300px;
+    }
+    .filter button{
+        margin-top: 30px;
+        margin-right: 60px;
+        padding: 20px;
+        padding-top: 15px;
+    }
+    .filter .options{
+        margin-top: 90px;
+        margin-right: 60px;
     }
     .search input{
         width: 300px;
         margin-top: 20px;
+    }
+    .back-btn button{
+        margin: 30px 20px;
+    }
+    #search_result{
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: -30px;
+    }
+    .nativeName, .topDomain{
+        margin-left: -15px;
+    }
+    #flag, .image{
+        height: 250px;
+        margin: 20px auto;
     }
     select{
         margin-top: 30px;

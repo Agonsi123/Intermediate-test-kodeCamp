@@ -78,15 +78,15 @@ const onFilterOptionClick = (e) => {
     // filter.classList.toggle('open');
     // console.log(filter.classList.toString())
     // filter.classList.remove('open');
-    // optionList.style.display = "none";
-    // console.log(filter.classList.toString())
+    optionList.style.display = "none";
+    console.log(filter.classList.toString())
     const button = filter.querySelector('button');
     button.textContent = region;
 
-    const filteredData = countries.filter(country => country.region.trim() === region.trim())
-    displayCountries(filteredData)
+    const filteredData = countries.filter(country => country.region.trim() === region.trim());
+    displayCountries(filteredData);
 
-   
+
 };
 
 const onFilterButtonClick = () =>{
@@ -131,7 +131,7 @@ if (window.location.pathname === '/details.html') {
 
 filter.addEventListener('click', onFilterButtonClick);
 searchInput.addEventListener('input', handleSearchInput);
-document.addEventListener("DOMContentLoaded", countryApi)
+document.addEventListener("DOMContentLoaded", countryApi);
 optionList.addEventListener("click", onFilterOptionClick)
 optionButton.addEventListener("click", () => {
     optionList.style.display = "block";
